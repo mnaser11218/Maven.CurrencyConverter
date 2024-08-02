@@ -1,5 +1,7 @@
 package io.zipcoder.currencyconverterapplication;
 
+import java.util.Currency;
+
 public enum CurrencyType {
     AUSTRALIAN_DOLLAR(2.70),
     CANADIAN_DOLLAR(2.64),
@@ -14,7 +16,7 @@ public enum CurrencyType {
     UNIVERSAL_CURRENCY(1.0),
     YEN(231.68);
 
-    private final double rate;
+    public double rate;
 
     CurrencyType(double rate) {
         this.rate = rate;
@@ -25,6 +27,6 @@ public enum CurrencyType {
     }
 
     public static CurrencyType getTypeOfCurrency(ConvertableCurrency currency) {
-        return null;
+       return currency.getCurrencyType();
     }
 }
